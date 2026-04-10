@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Journal of an Unwilling Pioneer</title>
+<style>
+:root {
+  --bg: #12100d;
+  --panel: #1c1814;
+  --panel-2: #26211c;
+  --ink: #e8dcc6;
+  --muted: #b8a98f;
+  --accent: #d0a66a;
+  --line: #3c342c;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top, #221b14 0%, var(--bg) 45%),
+    linear-gradient(180deg, #17130f, #12100d);
+  color: var(--ink);
+}
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 24px 18px;
+  border-right: 1px solid var(--line);
+  background: rgba(12, 10, 8, 0.72);
+  backdrop-filter: blur(8px);
+}
+.sidebar h1 {
+  font-size: 1.35rem;
+  margin: 0 0 8px;
+  color: var(--accent);
+}
+.sidebar p {
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+.nav {
+  margin-top: 18px;
+  display: grid;
+  gap: 8px;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+}
+.nav a:hover {
+  background: var(--panel-2);
+  border-color: var(--line);
+}
+.main {
+  padding: 32px 22px 48px;
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+}
+.hero {
+  padding: 18px 8px 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--accent);
+}
+.hero .subtitle {
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 760px;
+}
+.entry {
+  background: linear-gradient(180deg, rgba(35, 30, 25, 0.94), rgba(26, 22, 19, 0.94));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 22px 10px;
+  margin: 0 0 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.entry-image {
+  margin: 0 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.12);
+}
+.entry-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.entry .day {
+  display: inline-block;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: rgba(0,0,0,0.18);
+}
+.entry h2 {
+  margin: 14px 0 14px;
+  font-size: 1.55rem;
+}
+.entry p {
+  margin: 0 0 14px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+.footer {
+  color: var(--muted);
+  text-align: center;
+  padding: 18px 0 4px;
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar {
+    position: static;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav {
+    grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+  }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <h1>Field Journal</h1>
+    <p>Entries from Day 0 to Day 69. A wandering explorer’s record of mountains, ruins, catacombs, piglins, ancient cities, impossible worlds, and the occasional catastrophic emotional decision.</p>
+    <div class="nav">
+      <a href="#day-0">Day 0</a>
+<a href="#day-1">Day 1</a>
+<a href="#day-2">Day 2</a>
+<a href="#day-3">Day 3</a>
+<a href="#day-4">Day 4</a>
+<a href="#day-5">Day 5</a>
+<a href="#day-6">Day 6</a>
+<a href="#day-7">Day 7</a>
+<a href="#day-8">Day 8</a>
+<a href="#day-9">Day 9</a>
+<a href="#day-10">Day 10</a>
+<a href="#day-11">Day 11</a>
+<a href="#day-12">Day 12</a>
+<a href="#day-13">Day 13</a>
+<a href="#day-14">Day 14</a>
+<a href="#day-15">Day 15</a>
+<a href="#day-16">Day 16</a>
+<a href="#day-17">Day 17</a>
+<a href="#day-18">Day 18</a>
+<a href="#day-19">Day 19</a>
+<a href="#day-20">Day 20</a>
+<a href="#day-21">Day 21</a>
+<a href="#day-22">Day 22</a>
+<a href="#day-23">Day 23</a>
+<a href="#day-24">Day 24</a>
+<a href="#day-25">Day 25</a>
+<a href="#day-26">Day 26</a>
+<a href="#day-27">Day 27</a>
+<a href="#day-28">Day 28</a>
+<a href="#day-29">Day 29</a>
+<a href="#day-30">Day 30</a>
+<a href="#day-31">Day 31</a>
+<a href="#day-32">Day 32</a>
+<a href="#day-33">Day 33</a>
+<a href="#day-34">Day 34</a>
+<a href="#day-35">Day 35</a>
+<a href="#day-36">Day 36</a>
+<a href="#day-37">Day 37</a>
+<a href="#day-38">Day 38</a>
+<a href="#day-39">Day 39</a>
+<a href="#day-40">Day 40</a>
+<a href="#day-41">Day 41</a>
+<a href="#day-42">Day 42</a>
+<a href="#day-43">Day 43</a>
+<a href="#day-44">Day 44</a>
+<a href="#day-45">Day 45</a>
+<a href="#day-46">Day 46</a>
+<a href="#day-47">Day 47</a>
+<a href="#day-48">Day 48</a>
+<a href="#day-49">Day 49</a>
+<a href="#day-50">Day 50</a>
+<a href="#day-51">Day 51</a>
+<a href="#day-52">Day 52</a>
+<a href="#day-53">Day 53</a>
+<a href="#day-54">Day 54</a>
+<a href="#day-55">Day 55</a>
+<a href="#day-56">Day 56</a>
+<a href="#day-57">Day 57</a>
+<a href="#day-58">Day 58</a>
+<a href="#day-59">Day 59</a>
+<a href="#day-60">Day 60</a>
+<a href="#day-61">Day 61</a>
+<a href="#day-62">Day 62</a>
+<a href="#day-63">Day 63</a>
+<a href="#day-64">Day 64</a>
+<a href="#day-65">Day 65</a>
+<a href="#day-66">Day 66</a>
+<a href="#day-67">Day 67</a>
+<a href="#day-68">Day 68</a>
+<a href="#day-69">Day 69</a>
+    </div>
+  </aside>
+  <main class="main">
+    <section class="hero">
+      <h1>Field Journal of an Unwilling Pioneer</h1>
+      <div class="subtitle">A browsable diary written in a grim, reflective voice — part field log, part travel record, and not yet dark enough to admit what it may become later.</div>
+    </section>
+    
+    <article class="entry" id="day-0">
+      <div class="day">Day 0</div>
+      <h2>Parting Ways</h2>
+      <div class="entry-image"><img src="0.png" alt="Crayon sketch for Day 0"></div>
+      <p>Gerttie decided to stay.</p><p>I told her plainly what traveling alone in a place like this means. The land is wide, the nights are long, and the creatures that roam after sunset are not forgiving to the unprepared.</p><p>She listened… but only halfway.</p><p>She says she wants to build a house here. A real one. Something sturdy enough to last, with fields nearby and trees for lumber. She talked about gardens and windows and what direction the front door should face so the morning sun would come in just right.</p><p>I don’t know where she finds the optimism.</p><p>Still, she stayed.</p><p>While she started clearing space for her little homestead, I headed for the mountains. A traveler gathers what the land offers, and those peaks promised iron and coal if one was willing to wrestle them from the stone.</p><p>The climb was rough but productive. By sunset my pack was heavier with ore than I expected, and my hands smelled of dust and metal.</p><p>Before descending the far side, I found something curious tucked beneath a loose pile of rock.</p><p>A map.</p><p>Old parchment, weathered and folded many times. Whoever left it behind took care to hide it.</p><p>It points east.</p><p>Maps like this rarely lead to anything simple.</p><p>Tomorrow I follow it.</p>
+    </article>
+    
+    <article class="entry" id="day-1">
+      <div class="day">Day 1</div>
+      <h2>Crossing the Water</h2>
+      <div class="entry-image"><img src="1.png" alt="Crayon sketch for Day 1"></div>
+      <p>The land ended sooner than I expected.</p><p>The trail of the map carried me straight to the ocean — wide, cold, and stretching farther than the eye could comfortably follow.</p><p>So I built a boat.</p><p>Maple wood from the nearby forest, shaped and fastened carefully. If I’m going to trust my life to a vessel, I prefer it be one made properly.</p><p>The sea was calm today.</p><p>I sailed for most of the daylight hours, the shoreline fading behind me until there was nothing but water in every direction. It’s strange how quiet the world becomes out there. Even the wind seems to move more thoughtfully.</p><p>By late afternoon I reached another coast.</p><p>A thick forest greeted me — full of movement and noise. Deer, pigs, chickens, all wandering freely through the underbrush without much concern.</p><p>Travel demands supplies.</p><p>By nightfall I had gathered plenty.</p><p>The fire burns well tonight. Fresh meat cooks slowly while the forest settles into evening.</p><p>Tomorrow I move deeper inland.</p>
+    </article>
+    
+    <article class="entry" id="day-2">
+      <div class="day">Day 2</div>
+      <h2>The Frozen Fortress</h2>
+      <div class="entry-image"><img src="2.png" alt="Crayon sketch for Day 2"></div>
+      <p>Came across ruins today.</p><p>A fortress, half swallowed by frost and snow. Its towers were broken, its walls cracked by years of winter pressing against the stone.</p><p>Places like that are always worth exploring.</p><p>Inside I found the remnants of whatever force once guarded it — skeletons frozen into the walls and floors by thick layers of ice. At first I thought they were simply remains of a long-forgotten battle.</p><p>Then the first one broke free.</p><p>Frozen skeletons are far less patient than ordinary ones.</p><p>The fight was messy and loud in those echoing halls. Ice splintered everywhere and arrows rattled against the stonework. Eventually I managed to clear enough of them to escape the place with my life.</p><p>Not much treasure to show for it, but surviving counts as profit in my book.</p><p>I left the fortress standing behind me, silent once again.</p>
+    </article>
+    
+    <article class="entry" id="day-3">
+      <div class="day">Day 3</div>
+      <h2>Thunder</h2>
+      <div class="entry-image"><img src="3.png" alt="Crayon sketch for Day 3"></div>
+      <p>Stayed put today.</p><p>A storm rolled in before dawn — the kind that splits the sky open again and again with lightning. Thunder echoed across the hills like distant cannon fire.</p><p>I found a rock overhang and waited it out.</p><p>Hard to travel when the heavens are trying to spear the ground every few minutes.</p><p>Storms like that have a way of reminding you how small a traveler really is.</p><p>Still, the rain passed eventually.</p><p>They always do.</p>
+    </article>
+    
+    <article class="entry" id="day-4">
+      <div class="day">Day 4</div>
+      <h2>Eastward</h2>
+      <div class="entry-image"><img src="4.png" alt="Crayon sketch for Day 4"></div>
+      <p>Covered a great deal of ground today.</p><p>The map continues to lead east, though it does not bother explaining why. The terrain changed several times along the way — forests thinning into hills, hills stretching into long open plains.</p><p>The farther I travel, the quieter the world becomes.</p><p>Not empty.</p><p>Just wide.</p>
+    </article>
+    
+    <article class="entry" id="day-5">
+      <div class="day">Day 5</div>
+      <h2>A Note Beneath the Map</h2>
+      <div class="entry-image"><img src="5.png" alt="Crayon sketch for Day 5"></div>
+      <p>I took another look at the map tonight while the fire burned low.</p><p>There is writing on the bottom edge — nearly faded away. Looks like whoever owned it before me scratched the note in later.</p><p>Three words.</p><p>“Riches. North.”</p><p>No explanation.</p><p>Just that.</p><p>Treasure hunters have terrible handwriting and worse judgment. Still, directions are directions.</p><p>Tomorrow I turn north.</p>
+    </article>
+    
+    <article class="entry" id="day-6">
+      <div class="day">Day 6</div>
+      <h2>Interrupted</h2>
+      <div class="entry-image"><img src="6.png" alt="Crayon sketch for Day 6"></div>
+      <p>Nearly got flattened today.</p><p>I had stopped to watch a fox in the snow — clever little creature hunting beneath the drifts. There’s something calming about watching animals go about their lives like the world isn’t trying to kill everything.</p><p>That’s when the Iceologer showed up.</p><p>He must have been watching me for a while because the first sign of him was a chunk of ice forming above my head.</p><p>I moved just in time.</p><p>Closed the distance before he could repeat the trick and put him down quickly enough.</p><p>After that I crossed the Howling Peaks.</p><p>The wind there lives up to its name. It howls through the mountain passes without pause.</p><p>Night caught me before I could descend, so I slept on the ridge.</p><p>Cold night.</p><p>Too cold.</p><p>But I woke up, which is what counts.</p>
+    </article>
+    
+    <article class="entry" id="day-7">
+      <div class="day">Day 7</div>
+      <h2>Settling Old Scores</h2>
+      <div class="entry-image"><img src="7.png" alt="Crayon sketch for Day 7"></div>
+      <p>Ran into pillagers today.</p><p>Their patrol must have been moving through the region, though I cannot imagine why anyone would willingly wander these mountains unless they were hunting someone.</p><p>Perhaps they were.</p><p>The fight was brief but energetic. Crossbows make unpleasant company in narrow passes, but steel still solves most problems when you close the distance quickly enough.</p><p>Later I encountered another Iceologer.</p><p>I could pretend it was coincidence that I chose not to avoid him.</p><p>Truthfully, I was still irritated about yesterday.</p><p>He is no longer an issue.</p>
+    </article>
+    
+    <article class="entry" id="day-8">
+      <div class="day">Day 8</div>
+      <h2>The Catacombs</h2>
+      <div class="entry-image"><img src="8.png" alt="Crayon sketch for Day 8"></div>
+      <p>Discovered something far more interesting than ruins today.</p><p>Catacombs.</p><p>The entrance was partially collapsed and hidden among stone outcroppings, which likely explains why the place has not been picked clean already. I descended expecting the usual assortment of bones and stale air.</p><p>Instead I found movement.</p><p>More undead than I care to count.</p><p>The tunnels beneath the surface must stretch far deeper than I initially realized because when they began to rise from the darkness it seemed as though the entire earth had decided to stand up at once.</p><p>Fighting them all would have been foolish.</p><p>So I ran.</p><p>The experience left me with one useful realization — somewhere beneath this land is an enormous underground structure waiting to be explored.</p><p>Preferably with better preparation.</p>
+    </article>
+    
+    <article class="entry" id="day-9">
+      <div class="day">Day 9</div>
+      <h2>An Unexpected Home</h2>
+      <div class="entry-image"><img src="9.png" alt="Crayon sketch for Day 9"></div>
+      <p>Followed the echoes of distant sounds underground today.</p><p>Hard to describe exactly what they were. Something between wind moving through narrow stone and the faint suggestion of voices carried from deeper below.</p><p>Curiosity won, as it usually does.</p><p>After digging down for quite some time I broke through into a large chamber.</p><p>Turns out I have discovered my new residence.</p><p>An abandoned torture chamber, judging by the various iron implements scattered about and the rather uncomfortable furniture arrangements.</p><p>Not exactly the sort of place most people would choose to settle down.</p><p>Still, it has thick stone walls, plenty of space, and more importantly it is hidden from the surface.</p><p>Shelter is shelter.</p>
+    </article>
+    
+    <article class="entry" id="day-10">
+      <div class="day">Day 10</div>
+      <h2>Improvements</h2>
+      <div class="entry-image"><img src="10.png" alt="Crayon sketch for Day 10"></div>
+      <p>Spent the day making the place livable.</p><p>Cleared debris, moved a few of the more unpleasant devices out of the way, set up a proper sleeping space, and established storage for supplies.</p><p>It is remarkable how quickly a place can start to resemble a home with enough effort.</p><p>Also began digging upward toward the surface again.</p><p>Stone will be needed for further construction, and the sooner I establish a proper access tunnel the better.</p>
+    </article>
+    
+    <article class="entry" id="day-11">
+      <div class="day">Day 11</div>
+      <h2>Fire Beneath the Earth</h2>
+      <div class="entry-image"><img src="11.png" alt="Crayon sketch for Day 11"></div>
+      <p>While expanding the tunnels I uncovered something unexpected.</p><p>A massive lava pool deep underground.</p><p>The chamber glowed like a miniature sun trapped beneath the earth. Heat radiated through the stone so strongly that standing near the edge felt like leaning into a forge.</p><p>An opportunity like that should not be wasted.</p><p>So I built a portal.</p><p>With the proper arrangement of obsidian and a bit of encouragement from flint and steel, the frame opened into the familiar swirling violet.</p><p>A doorway to the Nether.</p><p>Not always the wisest decision.</p><p>But rarely a boring one.</p>
+    </article>
+    
+    <article class="entry" id="day-12">
+      <div class="day">Day 12</div>
+      <h2>Through Hell</h2>
+      <div class="entry-image"><img src="12.png" alt="Crayon sketch for Day 12"></div>
+      <p>Entered the Nether today.</p><p>Travel through that place is always unpleasant. The air smells of ash, the ground shifts beneath your feet, and everything living there seems deeply offended by visitors.</p><p>Still, it offers a faster route across great distances.</p><p>I fought off a sizable group of piglins along the way. Their coordination is impressive for creatures that seem perpetually angry at the existence of outsiders.</p><p>Victory came with one unfortunate casualty.</p><p>My pickaxe slipped from my hand during the fight and vanished directly into a lake of lava.</p><p>A regrettable loss.</p><p>Good tools are harder to replace than most enemies.</p>
+    </article>
+    
+    <article class="entry" id="day-13">
+      <div class="day">Day 13</div>
+      <h2>A Guest</h2>
+      <div class="entry-image"><img src="13.png" alt="Crayon sketch for Day 13"></div>
+      <p>Returned from the Nether escorting Gerttie.</p><p>She insisted on seeing the place I have been calling home.</p><p>Her reaction to the torture chamber was… less enthusiastic than expected.</p><p>According to her it gives off “bad vibes.”</p><p>Personally I think she is focusing too much on the history of the place rather than the excellent stonework.</p><p>Regardless, the journey back through the Nether was long and unpleasant, but we made it without major incident.</p>
+    </article>
+    
+    <article class="entry" id="day-14">
+      <div class="day">Day 14</div>
+      <h2>Rest</h2>
+      <div class="entry-image"><img src="14.png" alt="Crayon sketch for Day 14"></div>
+      <p>Did very little today.</p><p>Travel takes its toll, and even explorers benefit from the occasional pause.</p><p>Spent the day repairing equipment, organizing supplies, and enjoying the rare luxury of doing absolutely nothing productive.</p>
+    </article>
+    
+    <article class="entry" id="day-15">
+      <div class="day">Day 15</div>
+      <h2>Escort Duty</h2>
+      <div class="entry-image"><img src="15.png" alt="Crayon sketch for Day 15"></div>
+      <p>Guided Gerttie back to her own home today.</p><p>The route through the Nether is efficient, though not particularly comfortable for anyone unfamiliar with it.</p><p>She complained most of the way.</p><p>The heat, the piglins, the smell of sulfur, the “general atmosphere.”</p><p>At one point I briefly considered leaving her there so she could fully appreciate the experience.</p><p>Decided against it.</p><p>Probably for the best.</p>
+    </article>
+    
+    <article class="entry" id="day-16">
+      <div class="day">Day 16</div>
+      <h2>Nether Reconnaissance</h2>
+      <div class="entry-image"><img src="16.png" alt="Crayon sketch for Day 16"></div>
+      <p>Returned to the Nether for exploration.</p><p>There is always more territory to map in that place, and understanding the terrain makes future travel significantly easier.</p><p>Saw several interesting structures in the distance but chose not to investigate yet.</p><p>Preparation first.</p><p>Curiosity second.</p>
+    </article>
+    
+    <article class="entry" id="day-17">
+      <div class="day">Day 17</div>
+      <h2>HAMlet</h2>
+      <div class="entry-image"><img src="17.png" alt="Crayon sketch for Day 17"></div>
+      <p>Today I discovered a piglin settlement.</p><p>Naturally I have named it HAMlet.</p><p>Humor aside, the place contained a considerable amount of gilded blackstone and other useful materials. Acquiring them proved somewhat complicated by the presence of numerous piglin brutes who seemed deeply invested in preventing my success.</p><p>They were persistent.</p><p>I was more persistent.</p><p>Escaped with several useful blocks and only minor injuries.</p>
+    </article>
+    
+    <article class="entry" id="day-18">
+      <div class="day">Day 18</div>
+      <h2>Lost</h2>
+      <div class="entry-image"><img src="18.png" alt="Crayon sketch for Day 18"></div>
+      <p>Navigation in the Nether is rarely straightforward.</p><p>Today proved that point thoroughly.</p><p>While attempting to return home I wandered into unfamiliar territory and eventually stumbled upon a bastion remnant — a massive structure half collapsed into the surrounding terrain.</p><p>An impressive sight.</p><p>Also extremely dangerous.</p><p>I marked the location for future exploration.</p>
+    </article>
+    
+    <article class="entry" id="day-19">
+      <div class="day">Day 19</div>
+      <h2>Bastion Run</h2>
+      <div class="entry-image"><img src="19.png" alt="Crayon sketch for Day 19"></div>
+      <p>Returned to the bastion today.</p><p>Looted what I could carry before the piglins realized what was happening.</p><p>The exit strategy consisted primarily of running very fast while several extremely angry inhabitants attempted to end my career as an explorer.</p><p>A successful expedition overall.</p>
+    </article>
+    
+    <article class="entry" id="day-20">
+      <div class="day">Day 20</div>
+      <h2>Home Again</h2>
+      <div class="entry-image"><img src="20.png" alt="Crayon sketch for Day 20"></div>
+      <p>Finally made my way back to the torture chamber.</p><p>Strange how quickly a place can begin to feel familiar.</p><p>For now this will serve as a base of operations.</p><p>There are still catacombs beneath the earth waiting to be explored, ruins scattered across the surface, and vast sections of the Nether I have yet to map.</p><p>Plenty of work left.</p><p>Good.</p><p>Standing still is overrated.</p>
+    </article>
+    
+    <article class="entry" id="day-21">
+      <div class="day">Day 21</div>
+      <h2>Dripstone Hunt</h2>
+      <div class="entry-image"><img src="21.png" alt="Crayon sketch for Day 21"></div>
+      <p>Set out today looking for dripstone.</p><p>The caverns beneath this region are vast enough that it seemed inevitable I would find some eventually. Pointed stone formations like the ones I’ve seen in other lands would be useful for several things — traps, construction, and general architectural flair.</p><p>Instead I found skeletons.</p><p>Many skeletons.</p><p>Apparently the underground population here favors archery. I spent most of the day ducking arrows and sending the bones back where they belong. Caverns echo terribly during a fight, which makes determining where the next one is standing nearly impossible.</p><p>Still no dripstone.</p><p>Plenty of bones though.</p>
+    </article>
+    
+    <article class="entry" id="day-22">
+      <div class="day">Day 22</div>
+      <h2>Guided Expedition</h2>
+      <div class="entry-image"><img src="22.png" alt="Crayon sketch for Day 22"></div>
+      <p>Gerttie appeared today with what she described as reliable information about where dripstone could be found.</p><p>Against my better judgment I agreed to follow her.</p><p>She has a tendency to wander through caves with the confidence of someone who either knows exactly where she’s going or absolutely does not. At several points the path narrowed enough that falling would have resulted in a long and unpleasant descent into lava.</p><p>She insisted everything was under control.</p><p>I remained unconvinced.</p>
+    </article>
+    
+    <article class="entry" id="day-23">
+      <div class="day">Day 23</div>
+      <h2>The Cabin</h2>
+      <div class="entry-image"><img src="23.png" alt="Crayon sketch for Day 23"></div>
+      <p>The expedition continued.</p><p>Several near-death experiences later — mostly involving poorly judged jumps and a skeleton ambush that Gerttie somehow failed to notice — we stumbled across something unusual.</p><p>An underground cabin.</p><p>Not ruins. Not a dungeon. A proper structure built beneath the earth as if someone once decided that living underground was preferable to the surface.</p><p>The place was abandoned, though supplies remained scattered about the interior. Whoever built it must have left in a hurry.</p><p>No dripstone, unfortunately.</p><p>But the discovery made the trip somewhat worthwhile.</p><p>Barely.</p>
+    </article>
+    
+    <article class="entry" id="day-24">
+      <div class="day">Day 24</div>
+      <h2>Alone Again</h2>
+      <div class="entry-image"><img src="24.png" alt="Crayon sketch for Day 24"></div>
+      <p>Gerttie departed this morning.</p><p>She claimed she was heading back to her home on the surface, though the explanation changed three separate times while she was describing it.</p><p>First it was because she had something important to finish.</p><p>Then it was because she forgot something.</p><p>Then it was because she had been gone too long.</p><p>Hard to follow the logic.</p><p>In any case, the caves are quiet again.</p>
+    </article>
+    
+    <article class="entry" id="day-25">
+      <div class="day">Day 25</div>
+      <h2>A Productive Disaster</h2>
+      <div class="entry-image"><img src="25.png" alt="Crayon sketch for Day 25"></div>
+      <p>Today’s excavation produced results.</p><p>While digging through a new cavern system I uncovered a sizable vein of diamonds. The sort of discovery that makes an entire week of dangerous exploration worthwhile.</p><p>Unfortunately the cavern was also inhabited.</p><p>Zombies — dozens of them — emerging from dark corridors like a very poorly organized welcoming committee. Fighting underground is never pleasant, especially when the ground itself is riddled with holes deep enough to swallow a careless step.</p><p>The battle was chaotic.</p><p>Arrows from earlier skeleton encounters still stuck in the walls, zombies stumbling over each other in narrow tunnels, the occasional unfortunate one wandering directly into lava.</p><p>In the end I collected the diamonds.</p><p>And left the cavern significantly quieter than when I found it.</p>
+    </article>
+    
+    <article class="entry" id="day-26">
+      <div class="day">Day 26</div>
+      <h2>Suspicion</h2>
+      <div class="entry-image"><img src="26.png" alt="Crayon sketch for Day 26"></div>
+      <p>Received a message from Gerttie today.</p><p>Apparently she wants me to visit her house to see a “secret room” she has built.</p><p>She claims it is something special.</p><p>I remain skeptical.</p><p>There is a particular film I once saw about an overly enthusiastic host and an unwilling guest trapped in a house. The scenario she described feels… similar.</p><p>I will not be falling for that.</p><p>If the room is truly impressive she can describe it.</p><p>From a distance.</p>
+    </article>
+    
+    <article class="entry" id="day-27">
+      <div class="day">Day 27</div>
+      <h2>A Strange Discovery</h2>
+      <div class="entry-image"><img src="27.png" alt="Crayon sketch for Day 27"></div>
+      <p>Found something bizarre today.</p><p>While exploring a forest clearing I encountered the remains of a creeper. Not unusual in itself — they tend to explode frequently — but this one had been wearing a small backpack.</p><p>Inside the pack was a plush toy.</p><p>A little fabric creature, stitched together carefully and surprisingly well preserved considering its previous owner.</p><p>I have absolutely no explanation for this.</p><p>The toy now sits on a shelf in the torture chamber.</p><p>It seemed rude to leave it behind.</p>
+    </article>
+    
+    <article class="entry" id="day-28">
+      <div class="day">Day 28</div>
+      <h2>The Lost Wood</h2>
+      <div class="entry-image"><img src="28.png" alt="Crayon sketch for Day 28"></div>
+      <p>Spent the entire day looking for wood.</p><p>Not in the forest.</p><p>In my own storage chests.</p><p>At some point I placed a considerable supply of lumber somewhere in the base. Unfortunately the current organization system could best be described as optimistic chaos.</p><p>I searched every chest.</p><p>Then searched them again.</p><p>Still no wood.</p><p>I am beginning to suspect I buried it somewhere by accident.</p>
+    </article>
+    
+    <article class="entry" id="day-29">
+      <div class="day">Day 29</div>
+      <h2>Productive Intentions</h2>
+      <div class="entry-image"><img src="29.png" alt="Crayon sketch for Day 29"></div>
+      <p>Today I told myself I was going to organize the storage system.</p><p>Several times, in fact.</p><p>Each time I stood in front of the chests and mentally prepared to begin the process.</p><p>Then I found something else to do.</p><p>The chests remain unsorted.</p><p>Tomorrow perhaps.</p>
+    </article>
+    
+    <article class="entry" id="day-30">
+      <div class="day">Day 30</div>
+      <h2>The First Sprout</h2>
+      <div class="entry-image"><img src="30.png" alt="Crayon sketch for Day 30"></div>
+      <p>Success today.</p><p>The first sprout has finally grown.</p><p>It is small still, but strong — the beginning of something that will eventually make this place feel a little less like a cave and a little more like a settlement.</p><p>A small victory.</p><p>But victories of any size are worth recording.</p>
+    </article>
+    
+    <article class="entry" id="day-31">
+      <div class="day">Day 31</div>
+      <h2>Nether Recreation</h2>
+      <div class="entry-image"><img src="31.png" alt="Crayon sketch for Day 31"></div>
+      <p>Returned to the Nether for exploration.</p><p>Some people relax by fishing or sitting beside a quiet fire.</p><p>Personally, I prefer wandering through volcanic wastelands and fighting piglins.</p><p>There are worse ways to spend an afternoon.</p>
+    </article>
+    
+    <article class="entry" id="day-32">
+      <div class="day">Day 32</div>
+      <h2>Interior Design Advice</h2>
+      <div class="entry-image"><img src="32.png" alt="Crayon sketch for Day 32"></div>
+      <p>Gerttie stopped by again today with design suggestions.</p><p>According to her, mushrooms are currently a very popular aesthetic for underground living spaces.</p><p>She described various ways to decorate the chambers using glowing fungi, moss, and other organic growth.</p><p>I suspect she may have been spending too much time near the mushrooms.</p><p>Still.</p><p>The idea might not be terrible.</p>
+    </article>
+    
+    <article class="entry" id="day-33">
+      <div class="day">Day 33</div>
+      <h2>Deeper Routes</h2>
+      <div class="entry-image"><img src="33.png" alt="Crayon sketch for Day 33"></div>
+      <p>Returned to the Nether with no specific objective beyond exploration.</p><p>That usually leads to the most interesting discoveries.</p><p>The terrain grows more unstable the farther one travels from familiar ground. Large sections of basalt give way without warning, and the lava flows shift in ways that suggest the landscape is not as static as it appears.</p><p>Marked a few pathways for future travel.</p><p>Nearly lost one of them already.</p>
+    </article>
+    
+    <article class="entry" id="day-34">
+      <div class="day">Day 34</div>
+      <h2>Unstable Ground</h2>
+      <div class="entry-image"><img src="34.png" alt="Crayon sketch for Day 34"></div>
+      <p>Progress today was slow.</p><p>The ground in this region fractures easily, and several paths I attempted to follow ended abruptly in long drops into lava seas. Traversing the Nether always feels like walking across something unfinished — as though the land itself was never meant to support weight for long.</p><p>Encountered a few scattered piglins.</p><p>Nothing worth noting beyond the usual hostility.</p>
+    </article>
+    
+    <article class="entry" id="day-35">
+      <div class="day">Day 35</div>
+      <h2>Glistering Meadows</h2>
+      <div class="entry-image"><img src="35.png" alt="Crayon sketch for Day 35"></div>
+      <p>Found something remarkable.</p><p>A region unlike anything I have seen before — what I can only describe as glistering meadows. The ground shimmered faintly as if embedded with fine particles of reflective material, catching the glow of the surrounding lava in a way that made the entire area appear to breathe with light.</p><p>Strange flora grows there.</p><p>Not plants in the traditional sense, but something close enough to warrant the comparison. Tall, glass-like growths that hum faintly when disturbed.</p><p>The place is almost peaceful.</p><p>Almost.</p>
+    </article>
+    
+    <article class="entry" id="day-36">
+      <div class="day">Day 36</div>
+      <h2>Cobalt and Sapphire</h2>
+      <div class="entry-image"><img src="36.png" alt="Crayon sketch for Day 36"></div>
+      <p>The meadows yielded more than just strange scenery.</p><p>Discovered new materials embedded within the terrain — deep blue deposits resembling cobalt, along with crystalline formations that look very much like sapphire.</p><p>Harder than most stone.</p><p>Cleaner cuts.</p><p>Useful.</p><p>Collected what I could carry without overburdening myself. The area is too unstable to risk lingering for long.</p><p>Still, worth returning to.</p>
+    </article>
+    
+    <article class="entry" id="day-37">
+      <div class="day">Day 37</div>
+      <h2>Obsidian Variants</h2>
+      <div class="entry-image"><img src="37.png" alt="Crayon sketch for Day 37"></div>
+      <p>Came across a variation of obsidian today.</p><p>Darker, but with a faint internal sheen — almost as if something beneath the surface is reflecting light from within. I’ve taken to calling it cobalt obsidian for now, though the name may change with further study.</p><p>It behaves similarly to standard obsidian but appears denser.</p><p>Potential applications unknown.</p><p>The Nether continues to offer more than just danger.</p>
+    </article>
+    
+    <article class="entry" id="day-38">
+      <div class="day">Day 38</div>
+      <h2>Pushing Too Far</h2>
+      <div class="entry-image"><img src="38.png" alt="Crayon sketch for Day 38"></div>
+      <p>Traveled farther than intended.</p><p>There is a point in exploration where distance becomes difficult to measure. Landmarks repeat, pathways blur together, and the sense of direction becomes more instinct than certainty.</p><p>Today I likely crossed that point.</p><p>Still, I found my way back to a recognizable route before nightfall — or whatever passes for night in a place without a sky.</p><p>Will need to be more careful.</p>
+    </article>
+    
+    <article class="entry" id="day-39">
+      <div class="day">Day 39</div>
+      <h2>Bastion Assault</h2>
+      <div class="entry-image"><img src="39.png" alt="Crayon sketch for Day 39"></div>
+      <p>Discovered another bastion remnant.</p><p>Larger than the last.</p><p>More active.</p><p>The structure was heavily occupied by piglin brutes — far more than I expected. Retreat would have been the sensible option.</p><p>I did not retreat.</p><p>The fight was… extensive.</p><p>Brutes are relentless, and they do not break formation easily. Each engagement drew more of them from deeper within the structure until it felt less like a skirmish and more like an organized defense.</p><p>In the end, the bastion fell silent.</p><p>Loot was substantial.</p><p>Armor took damage, but nothing beyond repair.</p><p>Worth the effort.</p>
+    </article>
+    
+    <article class="entry" id="day-40">
+      <div class="day">Day 40</div>
+      <h2>Lantern Light</h2>
+      <div class="entry-image"><img src="40.png" alt="Crayon sketch for Day 40"></div>
+      <p>Constructed a portal within the bastion.</p><p>Efficiency seemed like a good enough reason at the time. Establishing a direct route back to the surface would save days of travel.</p><p>The portal opened without issue.</p><p>Stepping through was… disorienting.</p><p>After days surrounded by ash, fire, and shifting stone, I emerged into a maple forest just as night was settling in. The canopy burned with reds and golds even in the fading light, leaves rustling in a wind that didn’t feel like it was trying to kill me.</p><p>Strange how noticeable that becomes.</p><p>I had no interest in traveling through unfamiliar terrain in the dark, so I set out to find shelter.</p><p>Didn’t take long.</p><p>A village lay just beyond the treeline.</p><p>Lanterns hung from wooden posts, casting warm light across dirt paths and simple homes. The place was quiet — not abandoned, just settled into the stillness that comes after sunset. A few villagers lingered indoors, their silhouettes moving behind shuttered windows.</p><p>I took a bed in one of the houses.</p><p>No one objected.</p><p>After the Nether, the silence here felt different.</p><p>Not empty.</p><p>Just… calm.</p><p>I slept well.</p>
+    </article>
+    
+    
+    <article class="entry" id="day-41">
+      <div class="day">Day 41</div>
+      <h2>Whispers Below</h2>
+      <div class="entry-image"><img src="41.png" alt="Crayon sketch for Day 41"></div>
+      <p>A villager told us a story today.</p><p>Ordinarily that would not be worth recording. Villagers communicate in grunts, complaints, and the occasional look of profound disappointment. But this one, between his usual noises, managed to convey a rumor about something deep beneath the earth — a creature called the Warden.</p><p>The way he described it, or tried to, suggested less a beast and more a sentence handed down by the world itself.</p><p>Naturally, that was enough to spark curiosity.</p><p>Gerttie heard the same rumor and immediately decided this was something we needed to investigate. I reminded her that “needing” and “wanting to tempt death for the sake of a story” are not the same thing.</p><p>She ignored that distinction.</p><p>So we descended into the mines together.</p><p>The tunnels grew older the deeper we went. Timber supports gave way to carved stone, then to vast open chambers webbed with sculk growth that pulsed faintly in the dark like the earth had grown a nervous system.</p><p>Even our footsteps felt unwelcome there.</p><p>Some places are abandoned.</p><p>This place felt like it was waiting.</p>
+    </article>
+
+
+    <article class="entry" id="day-42">
+      <div class="day">Day 42</div>
+      <h2>The Ancient City</h2>
+      <div class="entry-image"><img src="42.png" alt="Crayon sketch for Day 42"></div>
+      <p>We found it.</p><p>An entire city buried beneath the world — towers split by time, long roads swallowed by sculk, bridges reaching out over black drops with no visible bottom. The ruins stretched farther than my torchlight could meaningfully explain. It did not look built by miners or refugees. It looked ceremonial. Deliberate. Important.</p><p>And dead.</p><p>Sound carried strangely there. A loose stone skidding across the floor echoed as though the city itself had heard it and wished to pass word along.</p><p>Gerttie and I moved carefully through the ruins, looting what we could from forgotten chests and trying not to touch anything that looked as though it might react badly to being touched.</p><p>This strategy lasted until something in the dark answered us.</p><p>The first warning was not a roar.</p><p>It was silence becoming heavier.</p>
+    </article>
+
+
+    <article class="entry" id="day-43">
+      <div class="day">Day 43</div>
+      <h2>The Chase</h2>
+      <div class="entry-image"><img src="43.png" alt="Crayon sketch for Day 43"></div>
+      <p>The Warden emerged from the dark today.</p><p>There are creatures one fights. There are creatures one flees. Then there are creatures that make those two ideas feel embarrassingly simplistic.</p><p>It rose out of the sculk like the city had shaped itself into a body and decided we had trespassed long enough. Taller than any beast I have seen, broad as a gatehouse, blind and yet somehow terribly certain of where we were. Each step it took sent dread through the floor before the sound itself arrived.</p><p>We ran.</p><p>There is no use dressing that up with pride.</p><p>We fled through broken halls and over half-collapsed bridges while the Warden tore through the ancient city behind us. Stone columns shattered. Sculk burst underfoot. Once, I looked back and saw it charge through a wall that had probably been standing for centuries as though age itself had no right to resist it.</p><p>At one point Gerttie slipped near the edge of a ruined stair and nearly fell into the dark below. I caught her arm, dragged her back upright, and for a few miserable seconds had the distinct sense that we were both about to die because curiosity makes fools of people.</p><p>Still we kept moving.</p><p>The city did not end.</p><p>The chase did not end.</p><p>By nightfall — if one can call it that, down there — I had begun to suspect the Warden did not tire at all.</p>
+    </article>
+
+
+    <article class="entry" id="day-44">
+      <div class="day">Day 44</div>
+      <h2>Heart of the Warden</h2>
+      <div class="entry-image"><img src="44.png" alt="Crayon sketch for Day 44"></div>
+      <p>Today we killed it.</p><p>I still do not fully believe that sentence.</p><p>The chase finally drove us into a shattered central district where old redstone mechanisms still clung stubbornly to function. Broken pistons, collapsed balconies, hanging lamps, and a maze of channels cut through reinforced deepslate. A place built for grandeur once. Conveniently, also a place full of things that could fall.</p><p>The Warden cornered us there. Gerttie was pinned beneath a slab of cracked stone after one of its charges brought half a gallery down around us. It turned toward her in the dark, and I understood with perfect clarity that if I failed in the next few moments I would watch the only tolerable person in this entire world die in front of me.</p><p>That proved motivating.</p><p>I ran straight at it.</p><p>Not because that was wise. Wisdom had left hours earlier. But because sometimes the only useful tactic is violence committed with enough conviction to briefly resemble strategy.</p><p>I baited the thing across unstable ground, set off the old mechanisms by accident and then on purpose, dropped masonry onto its back, drove it through sculk-choked trenches, and when it lunged for me near the edge of a fractured dais, the entire platform gave way beneath it.</p><p>The fall did not kill it.</p><p>So I went down after it.</p><p>The final struggle was close, ugly, and lit only by the sick glow of shattered sculk veins. It swung blindly, hit hard enough to blur my vision, and nearly crushed me against the stone. I got beneath it, found some gap in the ribbed armor of the thing, and drove my weapon in with every ounce of spite I had left.</p><p>When it finally collapsed, the whole city seemed to exhale.</p><p>Gerttie was alive.</p><p>That mattered more than the victory.</p><p>Still.</p><p>I will admit there was a certain satisfaction in kneeling over that fallen horror, reaching into its chest, and tearing its heart free with my own hands.</p><p>It is heavier than it looks.</p>
+    </article>
+
+
+    <article class="entry" id="day-45">
+      <div class="day">Day 45</div>
+      <h2>A Door Where There Should Not Be One</h2>
+      <div class="entry-image"><img src="45.png" alt="Crayon sketch for Day 45"></div>
+      <p>Spent the day wandering the ancient city after the battle.</p><p>Victory leaves a strange kind of quiet behind it. The place still felt dangerous, but no longer hostile in the same immediate, personal way. More like a graveyard than a battlefield.</p><p>I had been carrying the Warden’s heart for far too long. The thing pulsed faintly every so often, which I found insulting. After several hours of being followed around by a dead organ with opinions, I lost patience.</p><p>So I threw it.</p><p>Hard.</p><p>It struck a section of reinforced deepslate with enough force to crack the surface. Then the floor answered.</p><p>Darkness split open where the heart landed. Not a hole. A seam. A wound in the world, widening soundlessly until it became a standing oval of impossible black shot through with dim silver lines, as if distant stars had been trapped under glass.</p><p>Neither of us had meant to open anything.</p><p>Naturally, we stepped through.</p>
+    </article>
+
+
+    <article class="entry" id="day-46">
+      <div class="day">Day 46</div>
+      <h2>The Otherside</h2>
+      <div class="entry-image"><img src="46.png" alt="Crayon sketch for Day 46"></div>
+      <p>The place beyond the portal is difficult to describe without sounding unwell.</p><p>Dark, yes — but not the dark of caves or night. This was a softer darkness, endless and watchful, as if the world had been drained of daylight and left with only memory. The air carried almost no smell. The ground answered our footsteps with a dull hush. No monsters. No wind worth noting. Barely any noise at all.</p><p>Gerttie and I wandered for what felt like hours, speaking more quietly than necessary because the silence there seemed fragile enough to break.</p><p>There were shapes in the distance sometimes. Hills perhaps. Trees perhaps. It is hard to say when everything is lit like a dream someone half forgot.</p><p>We found nothing that first day besides the unsettling realization that a world without hostile creatures somehow feels less safe than one with them.</p>
+    </article>
+
+
+    <article class="entry" id="day-47">
+      <div class="day">Day 47</div>
+      <h2>Leaving Breadcrumbs for the Dead</h2>
+      <div class="entry-image"><img src="47.png" alt="Crayon sketch for Day 47"></div>
+      <p>Returned from the Otherside today, though only briefly.</p><p>We made the practical decision to store our equipment in chests before going back in. This was not caution in the noble sense. It was accounting. The portal did not inspire confidence, and I had no desire to lose every useful possession I own because some interdimensional threshold decided to develop opinions.</p><p>Also, if one vanishes into a silent alternate world forever, it seems courteous to leave one’s belongings somewhere easy to sort through.</p><p>So we unloaded tools, armor, valuables, trophies, spare food, and anything else we would curse ourselves for losing. Then we took only what we needed and went back through.</p><p>A clever system, really.</p><p>Optimized for disaster.</p>
+    </article>
+
+
+    <article class="entry" id="day-48">
+      <div class="day">Day 48</div>
+      <h2>A Wider Silence</h2>
+      <div class="entry-image"><img src="48.png" alt="Crayon sketch for Day 48"></div>
+      <p>We pushed farther into the Otherside today.</p><p>Distance behaves strangely there. We traveled for what should have been an entire day and yet never felt as though we had properly left the place where we started. The landscape shifts in broad, dreamlike gestures rather than clean borders. One hill becomes a plain. One plain becomes a forest of dark growths that are not quite trees but clearly wish to be treated as such.</p><p>Still, the world is not empty.</p><p>Only restrained.</p><p>The first distinct biome we found was warm — not blazing, but carrying a dry heat from beneath the ground, with ash-colored soil and long ridges of stone that sweated vapor into the dark.</p>
+    </article>
+
+
+    <article class="entry" id="day-49">
+      <div class="day">Day 49</div>
+      <h2>Extremes</h2>
+      <div class="entry-image"><img src="49.png" alt="Crayon sketch for Day 49"></div>
+      <p>The Otherside contains climates that have no business existing so close together.</p><p>Today we crossed from that heated region into a place so cold the air itself seemed brittle. Frost crept over black stone in branching patterns. Pale crystals jutted from cliffs like the teeth of something too large to fully emerge. Later, the cold gave way again to wetlands — broad pools reflecting no sky, reeds swaying in a breeze I could not feel, and layers of mist hanging low enough to brush by hand.</p><p>Hot places. Cold places. Wet places. All arranged with the careless logic of a dream.</p><p>I am beginning to suspect this world was not made the way ours was.</p><p>It was assembled.</p>
+    </article>
+
+
+    <article class="entry" id="day-50">
+      <div class="day">Day 50</div>
+      <h2>Achievements and Omens</h2>
+      <div class="entry-image"><img src="50.png" alt="Crayon sketch for Day 50"></div>
+      <p>We spent the day marking routes and naming landmarks because that is what explorers do when confronted by the incomprehensible — we insult it by cataloguing it.</p><p>There is now a ridge of black stone I have taken to calling Sculk Crown, a steam basin Gerttie insisted on naming something cheerful I refused to write down, and a field of pale growths that hum when the air shifts.</p><p>For a little while it almost felt normal.</p><p>That should have worried me more than it did.</p><p>A world this strange has no obligation to remain kind simply because one grows accustomed to it.</p>
+    </article>
+
+
+    <article class="entry" id="day-51">
+      <div class="day">Day 51</div>
+      <h2>Broken Heart</h2>
+      <div class="entry-image"><img src="51.png" alt="Crayon sketch for Day 51"></div>
+      <p>Gerttie disappeared.</p><p>No argument. No warning. She simply went off on her own at some point during our exploration and never returned to camp. I searched until my legs gave out. Called for her until my voice became a raw, useless thing. The Otherside answered with exactly what it always offers in abundance.</p><p>Nothing.</p><p>By the time I climbed the tallest sculk-covered mountain in sight, I could see the routes we had carved across that silent world — our fires long cold, our markers tiny beneath the dark, our accomplishments spread out below like evidence that effort can matter and still fail.</p><p>I sat there for a long time.</p><p>Then longer.</p><p>A person can die from many things. Swords. Falls. Hunger. Pride. It turns out heartbreak deserves a place on the list.</p><p>Sometime before the dark changed, I died atop that mountain with one thought looping uselessly through my mind.</p><p>I should have found her.</p>
+    </article>
+
+
+    <article class="entry" id="day-52">
+      <div class="day">Day 52</div>
+      <h2>An Unwelcome Shore</h2>
+      <div class="entry-image"><img src="52.png" alt="Crayon sketch for Day 52"></div>
+      <p>Death, as it happens, is administrative.</p><p>There was no chorus. No grand revelation. Just a grey shoreline beneath a colorless sky and the distinct impression that I had arrived somewhere no one intended visitors to linger. Shapes moved far off in the haze. Gates stood where there should not have been gates. A figure waited by a black river and looked at me the way a clerk might look at a form filled out incorrectly.</p><p>I objected.</p><p>At length.</p><p>I explained that I had not finished living, that I had unfinished business, that disappearing in a strange dimension because of emotional negligence was an insult to my reputation. The figure remained unimpressed.</p><p>So I bargained.</p>
+    </article>
+
+
+    <article class="entry" id="day-53">
+      <div class="day">Day 53</div>
+      <h2>Terms</h2>
+      <div class="entry-image"><img src="53.png" alt="Crayon sketch for Day 53"></div>
+      <p>The being I bargained with was not cruel, which somehow made the exchange worse.</p><p>Cruelty can at least be hated cleanly. This felt more like dealing with an ancient function. Death had rules. Death had patience. Death had heard every desperate argument before mine and considered none of them original.</p><p>Still, I made one point that seemed to matter.</p><p>I told it I could not leave while Gerttie might yet be wandering lost somewhere between worlds.</p><p>Whether from pity, boredom, or a temporary lapse in standards, I was offered a condition: return, find what was lost, and remember that borrowed time is still borrowed.</p><p>I accepted before the sentence was fully finished.</p>
+    </article>
+
+
+    <article class="entry" id="day-54">
+      <div class="day">Day 54</div>
+      <h2>Back Among the Living</h2>
+      <div class="entry-image"><img src="54.png" alt="Crayon sketch for Day 54"></div>
+      <p>Woke in a village today.</p><p>Not my bed. Not my home. Just a plain house with a low roof, a creaking door, and villagers staring at me as though I had been delivered by weather.</p><p>Fair enough.</p><p>I felt terrible. Hollowed out. Like my body had been reassembled from memory and not all of the pieces had arrived in the right order.</p><p>Still alive though.</p><p>Which is a difficult condition to complain about too loudly.</p>
+    </article>
+
+
+    <article class="entry" id="day-55">
+      <div class="day">Day 55</div>
+      <h2>Found Her</h2>
+      <div class="entry-image"><img src="55.png" alt="Crayon sketch for Day 55"></div>
+      <p>Gerttie is alive.</p><p>Or at least alive enough to be standing in the same village after apparently finding her own way back from the afterlife, which is either a miracle or a commentary on how loosely reality is currently holding together.</p><p>I cannot adequately describe the relief.</p><p>I considered giving a heartfelt speech.</p><p>Instead I stared at her for a moment, said her name like an idiot, and immediately shifted into practical matters because sincerity remains embarrassing even after death.</p><p>We both had the same realization at roughly the same time.</p><p>Our things were still out there.</p>
+    </article>
+
+
+    <article class="entry" id="day-56">
+      <div class="day">Day 56</div>
+      <h2>Recovery Plan</h2>
+      <div class="entry-image"><img src="56.png" alt="Crayon sketch for Day 56"></div>
+      <p>Began planning the recovery of our equipment.</p><p>Dying is inconvenient enough on its own. Dying after responsibly storing all one’s possessions in carefully labeled chests makes it worse, because then there is a clear, measurable inventory of everything one stands to lose.</p><p>We questioned villagers, compared notes, and retraced what little we could remember of our routes. Most of it sounded ridiculous when spoken aloud: portal beyond an ancient city, silent alternate world, mountain of grief, return via metaphysical negotiation.</p><p>The villagers groaned at me exactly as expected.</p><p>I dislike being predictable.</p>
+    </article>
+
+
+    <article class="entry" id="day-57">
+      <div class="day">Day 57</div>
+      <h2>Another City</h2>
+      <div class="entry-image"><img src="57.png" alt="Crayon sketch for Day 57"></div>
+      <p>In the course of searching for the path back, we found another ancient city.</p><p>Apparently the world keeps manufacturing these just to test whether I have learned caution.</p><p>I have not.</p><p>This one was different from the first — broader streets, more collapsed towers, less immediate sculk growth near the center. Old damage. Older silence. We searched it methodically, both for supplies and for any sign of how these buried places might connect to the Otherside.</p><p>No answers worth trusting.</p><p>A few useful materials though.</p>
+    </article>
+
+
+    <article class="entry" id="day-58">
+      <div class="day">Day 58</div>
+      <h2>Fifteen Thousand Blocks</h2>
+      <div class="entry-image"><img src="58.png" alt="Crayon sketch for Day 58"></div>
+      <p>We traveled an absurd distance today.</p><p>By my count it should have taken far longer than it did, but the route through the ruins made use of a series of ancient transit frames — old gateways that still hummed faintly when supplied with enough charge and confidence. Gerttie called it teleportation. I prefer to think of it as agreeing to be mailed.</p><p>Either way, we covered roughly fifteen thousand blocks in a manner I would not recommend to anyone attached to the orderly arrangement of their internal organs.</p><p>Fast, though.</p><p>Very fast.</p>
+    </article>
+
+
+    <article class="entry" id="day-59">
+      <div class="day">Day 59</div>
+      <h2>Picking Through the Past</h2>
+      <div class="entry-image"><img src="59.png" alt="Crayon sketch for Day 59"></div>
+      <p>The search finally brought us back onto familiar routes in the Otherside.</p><p>It is strange how quickly a place can stop feeling unknowable once you have died there and returned out of spite.</p><p>We recovered caches, markers, abandoned camps, and eventually the chest trail we had left for ourselves like suspiciously competent corpses. Most of our gear survived. A few items had vanished. The universe always charges a fee.</p><p>Still, it could have been worse.</p><p>We could have had to do all of this separately.</p>
+    </article>
+
+
+    <article class="entry" id="day-60">
+      <div class="day">Day 60</div>
+      <h2>Return Route</h2>
+      <div class="entry-image"><img src="60.png" alt="Crayon sketch for Day 60"></div>
+      <p>Made it back.</p><p>Back through the ancient city. Back through the portal. Back to a world with villagers, weather, and an entirely more manageable relationship with death.</p><p>The journey has left me with more questions than supplies, which is saying something considering how many supplies I nearly lost.</p><p>I should probably rest.</p><p>I will probably not.</p>
+    </article>
+
+
+    <article class="entry" id="day-61">
+      <div class="day">Day 61</div>
+      <h2>Duck Island</h2>
+      <div class="entry-image"><img src="61.png" alt="Crayon sketch for Day 61"></div>
+      <p>Gerttie returned to Duck Island today.</p><p>I followed.</p><p>Not because I had pressing business there. Not because I enjoy travel for its own sake. I followed because she is, to date, the only person I have met in this world who does not respond to my existence with some variation of a disapproving grunt.</p><p>That sort of companionship becomes difficult to ignore once one has died over it.</p><p>She seemed distracted. Quiet. I told myself I was only there to make sure she was all right.</p><p>This was not entirely untrue.</p>
+    </article>
+
+
+    <article class="entry" id="day-62">
+      <div class="day">Day 62</div>
+      <h2>The Flooded Way Out</h2>
+      <div class="entry-image"><img src="62.png" alt="Crayon sketch for Day 62"></div>
+      <p>Things went badly in the mines beneath Duck Island.</p><p>I went in after her when she failed to come back up. The tunnels narrowed, twisted, and eventually trapped us deeper than either of us intended. Several routes had collapsed. The air grew stale. Water seeped steadily through the stone in thin shining threads that suggested the sea was far closer than comfort allows.</p><p>Then I found it — a narrow opening in the rock with water leaking through.</p><p>Ordinarily I would classify that as a problem.</p><p>Today it looked like our only chance.</p><p>I led us through a deep, waterlogged cavern that seemed determined to drown us in increments. We swam by touch more than sight, scraping against stone, running out of breath one miserable second at a time until the passage widened and the pressure of open water took hold.</p>
+    </article>
+
+
+    <article class="entry" id="day-63">
+      <div class="day">Day 63</div>
+      <h2>Crossroads</h2>
+      <div class="entry-image"><img src="63.png" alt="Crayon sketch for Day 63"></div>
+      <p>We broke the surface in the ocean today.</p><p>By some miracle — or perhaps because the world is not yet finished tormenting me — I happened to have an inflatable raft packed away. A ridiculous item to carry, right up until the moment it becomes heroic.</p><p>We made landfall soaked, exhausted, and far too relieved to complain properly.</p><p>From there I built a Nether portal to get us back to something resembling civilization and escorted Gerttie to the crossroads. I thought, perhaps, she might come back with me after everything.</p><p>She did not.</p><p>She said she wanted to go home.</p><p>I understood.</p><p>That did not improve matters.</p>
+    </article>
+
+
+    <article class="entry" id="day-64">
+      <div class="day">Day 64</div>
+      <h2>Order from Ruin</h2>
+      <div class="entry-image"><img src="64.png" alt="Crayon sketch for Day 64"></div>
+      <p>Spent the day organizing my storage and pretending that counts as emotional stability.</p><p>To be fair, the base needed it. Chests had become archaeological layers of bad decisions. I sorted tools, materials, trophies, food, strange dimensional debris, and all the other things one accumulates while repeatedly refusing to live a safer life.</p><p>The work helped.</p><p>A little.</p>
+    </article>
+
+
+    <article class="entry" id="day-65">
+      <div class="day">Day 65</div>
+      <h2>Netherite</h2>
+      <div class="entry-image"><img src="65.png" alt="Crayon sketch for Day 65"></div>
+      <p>Put my ancient debris to use today.</p><p>I had been collecting it for some time without fully deciding what deserved the upgrade. That indecision has now ended. Smelted the scraps, forged the ingots, and improved several key pieces of equipment. The difference is noticeable immediately. Heavier. Stronger. More final.</p><p>There is comfort in good armor.</p><p>It does not solve loneliness, but it does help with everything else.</p>
+    </article>
+
+
+    <article class="entry" id="day-66">
+      <div class="day">Day 66</div>
+      <h2>A Brief Visit</h2>
+      <div class="entry-image"><img src="66.png" alt="Crayon sketch for Day 66"></div>
+      <p>Gerttie stopped by.</p><p>For one bright, stupid moment I was absurdly happy about it.</p><p>Then it became clear she was here for a netherite backpack.</p><p>I gave her one, of course. I would have given her three and a map and an escort besides. She thanked me, took the pack, and left almost immediately after.</p><p>The base felt larger once she was gone.</p><p>Not in any useful way.</p>
+    </article>
+
+
+    <article class="entry" id="day-67">
+      <div class="day">Day 67</div>
+      <h2>After</h2>
+      <div class="entry-image"><img src="67.png" alt="Crayon sketch for Day 67"></div>
+      <p>It is remarkable how quickly a place can return to silence.</p><p>Yesterday there were footsteps, conversation, the possibility of company. Today there was only the sound of chests closing and the occasional distant mob reminding me that the world remains populated in the least satisfying manner possible.</p><p>I am lonelier without Gerttie than I was before I met her.</p><p>That seems unfair.</p>
+    </article>
+
+
+    <article class="entry" id="day-68">
+      <div class="day">Day 68</div>
+      <h2>No Good Reason</h2>
+      <div class="entry-image"><img src="68.png" alt="Crayon sketch for Day 68"></div>
+      <p>Thought about visiting her today.</p><p>Thought about it for quite a while, in fact.</p><p>Then came the obvious question: to what end?</p><p>To make sure she is well? Possibly.</p><p>To annoy her? Also possible.</p><p>To stand awkwardly outside her house inventing reasons I happened to be in the area? Most likely.</p><p>In the end I stayed where I was.</p><p>Cowardice occasionally disguises itself as restraint.</p>
+    </article>
+
+
+    <article class="entry" id="day-69">
+      <div class="day">Day 69</div>
+      <h2>One Heart</h2>
+      <div class="entry-image"><img src="69.png" alt="Crayon sketch for Day 69"></div>
+      <p>She never called back.</p><p>I realize that sentence sounds unreasonable in a world where communication technology consists largely of shouting across inconvenient terrain, but the principle stands.</p><p>No message. No visit. No sign.</p><p>I started this journey with ten hearts.</p><p>Now I have one.</p><p>And it is broken.</p><p>If loneliness can finish what the Warden started, then I suppose I have finally found an enemy equal to the task.</p>
+    </article>
+
+
+    <div class="footer">End of current entries — Day 69.</div>
+  </main>
+</div>
+</body>
+</html>
